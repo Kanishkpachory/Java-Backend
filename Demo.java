@@ -1,29 +1,36 @@
-package Object;
+package Array;
 
-
-//Object - properties 
-
-class Calculator{
-
-    int a ;
-
-    public int add(int num1 , int num2){
-        System.out.println("in add");
-        int sum = num1 + num2;
-        return sum;
-    }
+class Student{
+    int roll;
+    String name;
+    int marks;
 }
-
 
 public class Demo {
     public static void main(String arg[]){
-        int num1=4;
-        int num2=5;
+        Student s1 = new Student();
+        s1.roll = 10;
+        s1.marks = 55;
+        s1.name = "kanishk";
 
-        Calculator calc = new Calculator();
-        int result = calc.add(num1,num2);
-       // int result = num1+num2;
+        Student s2 = new Student();
+        s2.roll = 11;
+        s2.marks = 65;
+        s2.name = "pachory";
 
-        System.out.println(result);
+        Student s3 = new Student();
+        s3.roll = 12;
+        s3.marks = 75;
+        s3.name = "parakram";
+
+        Student students[] = new Student[3];
+        students[0]=s1;
+        students[1]=s2;
+        students[2]=s3;
+
+        for(Student n : students){
+            System.out.print("Roll-No. = " +n.roll+ " , " +" Marks : " +n.marks+ " , " + " Name : " +n.name+ " || " );
+        }
+
     }
 }
