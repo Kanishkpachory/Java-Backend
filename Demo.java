@@ -1,36 +1,42 @@
-package Array;
+package Encapsulation;
 
-class Student{
-    int roll;
-    String name;
-    int marks;
+class Human{
+    // private int age = 11;
+    // private String name = " kanishk";
+
+    private int age;
+    private String name;
+    public int getAge() {
+        return age;
+    }
+    public String getName() {
+        return name;
+    }
+    // public void setAge(int age , Human obj) {
+    //     Human obj2 = obj;
+    //     obj2.age = age;
+    // }
+    public void setAge(int age) {
+       this.age = age;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
 
 public class Demo {
     public static void main(String arg[]){
-        Student s1 = new Student();
-        s1.roll = 10;
-        s1.marks = 55;
-        s1.name = "kanishk";
+        Human obj = new Human();
+        // human.ageobj
+        // human.name = "Navin";
 
-        Student s2 = new Student();
-        s2.roll = 11;
-        s2.marks = 65;
-        s2.name = "pachory";
+        // obj.setAge(14 , obj);
+        obj.setAge(14 );
+        obj.setName("pachory");
 
-        Student s3 = new Student();
-        s3.roll = 12;
-        s3.marks = 75;
-        s3.name = "parakram";
+        System.out.println(obj.getName() + " : " + obj.getAge());
 
-        Student students[] = new Student[3];
-        students[0]=s1;
-        students[1]=s2;
-        students[2]=s3;
-
-        for(Student n : students){
-            System.out.print("Roll-No. = " +n.roll+ " , " +" Marks : " +n.marks+ " , " + " Name : " +n.name+ " || " );
-        }
 
     }
 }
