@@ -1,44 +1,43 @@
-package Constructor;
+package StaticBlockDay4;
 
-class Human{
-    private int age;
-    private String name;
+class Mobile{
+    String brand;
+    int price;
+    static String name;
 
-    public Human(){                             //Default constructor ( no values passed in paramter)
-        System.out.println("in constructor");
-        age = 12;
-        name = "John";
+    static{
+        name = "mobile";
+        System.out.println("in static");
     }
-    public Human(int a , String n){             //paramterized constructor (we assign parameter to use in main class directly)
-        System.out.println("in constructor  - 2222");
-        this.age = a;
-        this.name = n;
+
+    public Mobile(){
+        brand = "";
+        price = 200;
+        // name = "Phone";
+        System.out.println("in consturutor");
     }
-   
-    public int getAge(){
-        return age;
+
+    public void show(){
+        System.out.println(brand + " || " + price + " || " + name);
     }
-    public String getName(){
-        return name;
-    }
-    public void setAge(int age){
-        this.age = age;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    
 }
 
 public class Demo {
-    public static void main(String arg[]){
-        Human obj = new Human();
-        Human obj2 = new Human(14 , "Kanishk");
-        // Human obj1 = new Human();
+    public static void main(String arg[]) throws ClassNotFoundException{
+        // Mobile obj = new Mobile();
+        // obj.brand = "Iphone";
+        // obj.price = 3000;
 
-        // obj.setAge(14);
-        // obj.setName("kanishk");
-        System.out.println(obj.getName() + " : " + obj.getAge());
-        System.out.println(obj2.getName() + " : " + obj2.getAge());
+        // Mobile obj2 = new Mobile();
+        // obj2.brand = "Samsung";
+        // obj2.price = 3000;
+        
+
+        // obj.show();
+        // obj2.show();
+
+        Class.forName("StaticBlockDay4.Mobile");
+
     }
+   
 }
