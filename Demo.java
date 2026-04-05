@@ -1,43 +1,27 @@
-package StaticBlockDay4;
+package MethodOverwritingDay6;
 
-class Mobile{
-    String brand;
-    int price;
-    static String name;
+//👉 Overloading = “same name, different input”
+//👉 Overriding = “same method, new behavior”
 
-    static{
-        name = "mobile";
-        System.out.println("in static");
-    }
-
-    public Mobile(){
-        brand = "";
-        price = 200;
-        // name = "Phone";
-        System.out.println("in consturutor");
-    }
-
+class A{
     public void show(){
-        System.out.println(brand + " || " + price + " || " + name);
+        System.out.println("in A show");
+    }
+    public void Config(){
+        System.out.println("in A config");
+    }
+
+}
+class B extends A{
+    public void show(){  //show method is same in both class and B extends A so its a confilict sitution that which method to chosse  ,, but here show()method of B class will get selected and executed.
+        System.out.println("in B show");
     }
 }
 
 public class Demo {
-    public static void main(String arg[]) throws ClassNotFoundException{
-        // Mobile obj = new Mobile();
-        // obj.brand = "Iphone";
-        // obj.price = 3000;
-
-        // Mobile obj2 = new Mobile();
-        // obj2.brand = "Samsung";
-        // obj2.price = 3000;
-        
-
-        // obj.show();
-        // obj2.show();
-
-        Class.forName("StaticBlockDay4.Mobile");
-
+    public static void main(String arg[]){
+        B obj = new B();
+        obj.show();
+        obj.Config();
     }
-   
 }
