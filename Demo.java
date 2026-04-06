@@ -1,27 +1,17 @@
-package MethodOverwritingDay6;
+package PackagesDay7.Main;
 
-//👉 Overloading = “same name, different input”
-//👉 Overriding = “same method, new behavior”
+import PackagesDay7.Pera;
+import PackagesDay7.Create.*; //thorigh this we can call all the java files and packages inside the folder but we cant call folder thorugh this it only call all the java files present is the package
 
-class A{
-    public void show(){
-        System.out.println("in A show");
-    }
-    public void Config(){
-        System.out.println("in A config");
-    }
-
-}
-class B extends A{
-    public void show(){  //show method is same in both class and B extends A so its a confilict sitution that which method to chosse  ,, but here show()method of B class will get selected and executed.
-        System.out.println("in B show");
-    }
-}
+// import PackagesDay7.Create.A;
+// import PackagesDay7.Create.B;
 
 public class Demo {
-    public static void main(String arg[]){
-        B obj = new B();
-        obj.show();
-        obj.Config();
+    public static void main(String arg[]) throws ClassNotFoundException {
+        A obj = new A();
+        B obj2 = new B();
+        // Pera pera = new Pera();
+
+        Class.forName("PackagesDay7.Pera");
     }
 }
